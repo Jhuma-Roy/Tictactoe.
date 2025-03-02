@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Tic Tac Toe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background">
+    <div class="floating-xo"></div>
+  </div>
+  <div class="mode-selection">
+    <h1>Select Mode</h1>
+    <button id="one-player-btn">One Player</button>
+    <button id="two-player-btn">Two Players</button>
+  </div>
+  <div class="difficulty-selection">
+    <h1>Select Difficulty</h1>
+    <button id="easy-btn">Easy</button>
+    <button id="medium-btn">Medium</button>
+    <button id="hard-btn">Hard</button>
+  </div>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <p class="turn-indicator">Player X's Turn</p>
+    <div class="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+    <button id="back-btn">Back to Mode Selection</button>
+  </div>
+  <div class="end-screen">
+    <p class="result-message"></p>
+    <button id="restart-btn">Restart Game</button>
+  </div>
+  <script src="script.js"></script>
+</body>

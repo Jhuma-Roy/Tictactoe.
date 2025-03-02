@@ -1,0 +1,233 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-xo {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.1);
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-50px) translateX(50px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Mode Selection Screen */
+.mode-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.mode-selection h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.mode-selection button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 10px;
+  background: #00ffff;
+  border: none;
+  color: #1e3c72;
+  cursor: pointer;
+}
+
+.mode-selection button:hover {
+  background: #ff00ff;
+  color: white;
+}
+
+/* Difficulty Selection Screen */
+.difficulty-selection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  display: none; /* Hidden by default */
+}
+
+.difficulty-selection h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.difficulty-selection button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  margin: 10px;
+  background: #00ffff;
+  border: none;
+  color: #1e3c72;
+  cursor: pointer;
+}
+
+.difficulty-selection button:hover {
+  background: #ff00ff;
+  color: white;
+}
+
+/* Game Container */
+.container {
+  text-align: center;
+  z-index: 1;
+  display: none; /* Hidden by default */
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.turn-indicator {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cell.x::before {
+  content: 'X';
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.cell.o::before {
+  content: 'O';
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* End Screen */
+.end-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  display: none;
+}
+
+.result-message {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+#restart-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #00ffff;
+  border: none;
+  color: #1e3c72;
+  cursor: pointer;
+}
+
+#restart-btn:hover {
+  background: #ff00ff;
+  color: white;
+}
+
+/* Back Button */
+#back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #ff00ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#back-btn:hover {
+  background: #00ffff;
+  color: #1e3c72;
+}
+
+/* Blow-up animation */
+@keyframes blow-up {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.blow-up {
+  animation: blow-up 1s ease-out forwards;
+}
